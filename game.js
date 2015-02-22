@@ -27,6 +27,7 @@ window.addEventListener('keydown', function (evt) {
 
 
 window.addEventListener('touchstart', function (ev) {
+    document.body.innerHTML += "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].screenX + " <br />";
 	if (ev.touches.length > 1) {
 		if (ev.touches[0].screenX > window.screen.availWidth/2) {
 			pad.setAttribute("x", parseInt(pad.getAttribute("x")) + 10);
@@ -40,3 +41,5 @@ window.addEventListener('touchstart', function (ev) {
 document.getElementById("btn").onclick = function (evt) {
 	pad.setAttribute("color", "red");
 };
+
+document.body.innerHTML += "availWidth: " + window.screen.availWidth + "<br />";
