@@ -13,3 +13,23 @@ body
     height: 100%;
 }
 
+.cssrect
+{
+    fill: #6B9A49;
+    stroke: #FFF;
+    stroke-width: 2;
+}
+
+#ball
+{
+    fill: #6B9A49;
+    stroke: #FFF;
+    stroke-width: 2;
+}
+
+#svgRoot
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
