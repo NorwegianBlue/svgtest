@@ -2,6 +2,15 @@ var pad = document.getElementById("pad");
 var log = document.getElementById("log");
 var gameIntervalId = -1;
 
+
+/*
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+*/
+
 function gameloop() {
 }
 
@@ -28,11 +37,15 @@ window.addEventListener('keydown', function (evt) {
 
 
 window.addEventListener('touchstart', function (ev) {
-    log.innerHTML = log.innerHTML +  "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].screenX + " <br />";
+    ev.preventDefault();
+    var touches = ev.changedTouches;
+
+    log.innerHTML = log.innerHTML +  "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].pageX + " <br />";
+
     if (ev.touches.length > 1) {
-        if (ev.touches[0].screenX > window.screen.availWidth / 2) {
+        if (ev.touches[0].pageX > window.screen.availWidth / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) + 10);
-        } else if (ev.touches[0].screenX < window.screen.availWidth / 2) {
+        } else if (ev.touches[0].pageX < window.screen.availWidth / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) - 10);
         }
     }
