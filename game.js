@@ -1,4 +1,5 @@
 var pad = document.getElementById("pad");
+var log = document.getElementById("log");
 var gameIntervalId = -1;
 
 function gameloop() {
@@ -27,7 +28,7 @@ window.addEventListener('keydown', function (evt) {
 
 
 window.addEventListener('touchstart', function (ev) {
-    document.body.innerHTML += "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].screenX + " <br />";
+    log.innerHTML = log.innerHTML +  "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].screenX + " <br />";
     if (ev.touches.length > 1) {
         if (ev.touches[0].screenX > window.screen.availWidth / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) + 10);
@@ -43,4 +44,4 @@ document.getElementById("btn").onclick = function (evt) {
     //pad.style.backgroundColor("red");
 };
 
-document.body.innerHTML += "availWidth: " + window.screen.availWidth + "<br />";
+log.innerHTML += "availWidth: " + window.screen.availWidth + "<br />";
