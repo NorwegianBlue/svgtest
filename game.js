@@ -40,12 +40,13 @@ window.addEventListener('touchstart', function (ev) {
     ev.preventDefault();
     var touches = ev.changedTouches;
 
-    log.innerHTML = log.innerHTML +  "touches.length: " + ev.touches.length + ", touches[0].screenX: " + ev.touches[0].pageX + " <br />";
+    log.innerHTML = log.innerHTML +  "touches.length: " + ev.touches.length + ", touches[0].clientX: " + ev.touches[0].clientX + " offsetWidth: " + ev.touches[0].target.offsetWidth + "<br />";
 
     if (ev.touches.length > 1) {
-        if (ev.touches[0].pageX > window.screen.availWidth / 2) {
+        var w = ev.touches[0].target.offsetWidth;
+        if (ev.touches[0].clientX > ev.touches[0]. w / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) + 10);
-        } else if (ev.touches[0].pageX < window.screen.availWidth / 2) {
+        } else if (ev.touches[0].clientX < w / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) - 10);
         }
     }
