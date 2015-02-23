@@ -44,7 +44,7 @@ window.addEventListener('touchstart', function (ev) {
 
     if (ev.touches.length > 1) {
         var w = ev.touches[0].target.offsetWidth;
-        if (ev.touches[0].clientX > ev.touches[0]. w / 2) {
+        if (ev.touches[0].clientX > w / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) + 10);
         } else if (ev.touches[0].clientX < w / 2) {
             pad.setAttribute("x", parseInt(pad.getAttribute("x")) - 10);
