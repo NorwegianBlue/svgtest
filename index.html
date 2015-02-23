@@ -7,10 +7,15 @@
 </head>
 
 <body>
+<script>
+    function doClick(ev) {
+        ev.style.fill = '#f00';
+    }
+</script>
 <div>SVG Test</div>
 <svg id="svgRoot">
   <circle id="ball" cx="100" cy="100" r="10" />
-  <rect id="pad" class="cssrect" x="1cm" y="3cm" width="1cm" height="1cm" />
+  <rect id="pad" class="cssrect" x="1cm" y="3cm" width="1cm" height="1cm" onclick="doClick(this);" />
 </svg>
 <a href="#" id="btn">Click</a>
     <div id="log"></div>
