@@ -55,7 +55,7 @@
         var background = PIXI.Sprite.fromImage("textDemoBG.jpg");
         stage.addChild(background);
         // create a renderer instance
-        var renderer = PIXI.autoDetectRenderer(620, 400);
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
         // add the renderer view element to the DOM
         document.body.appendChild(renderer.view);
         // create some white text using the Snippet webfont
@@ -69,8 +69,8 @@
         spinningText.position.x = 620 / 2;
         spinningText.position.y = 400 / 2;
         // create a text object that will be updated..
-        var countingText = new PIXI.Text("COUNT 4EVAR: 0", { font: "bold italic 60px Arvo", fill: "#3e1707", align: "center", stroke: "#a4410e", strokeThickness: 7 });
-        countingText.position.x = 620 / 2;
+        var countingText = new PIXI.Text("COUNT 4EVAR: 0", { font: "bold italic 40px Arvo", fill: "#3e1707", align: "left", stroke: "#a4410e", strokeThickness: 7 });
+        countingText.position.x = 30;
         countingText.position.y = 320;
         countingText.anchor.x = 0.5;
         stage.addChild(textSample);
